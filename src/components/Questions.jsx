@@ -7,7 +7,13 @@ const Questions = () => {
             <div className="questions-heading">
                 <div className="question-title">
                     <h3> How to scroll (move screen up/down while cursor remains fixed at same screen position) in Vim </h3>
-                    <p> - 103 + </p>
+                    <div className="numbers">
+                        <div className="number">
+                            <p id='minus'> - </p>
+                            <p id='num'> 103 </p>
+                            <p id='plus'> + </p>
+                        </div>
+                    </div>
                 </div>
 
                 <div className="question-author-details">
@@ -19,7 +25,7 @@ const Questions = () => {
                         </div>
                     </div>
                     <div className="question-asked-time">
-                        <p> Asked 2years 1month ago | Active 21 days ago | Viewed 123k times </p>
+                        <pre> Asked 2years 1month ago | Active 21 days ago | Viewed 123k times </pre>
                     </div>
                 </div>
             </div>
