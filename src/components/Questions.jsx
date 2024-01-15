@@ -1,5 +1,6 @@
 import React from 'react'
 import authorImg from '../assets/author.jpg'
+import saveImg from '../assets/save-tag.png'
 
 const Questions = () => {
   return (
@@ -41,6 +42,14 @@ const Questions = () => {
                     <p> File C:\Theses_Repo\train-cnn\environment\Scripts\activate.psl cannot be loaded because running scripts is disabled on this system. </p>
                 </div>
                 <p> After reading this I tried to run the visual studio code in administrator mode, thinking that the problem was a matter of privileges. But the error is throwing anyway. </p>
+            </div>
+            
+
+            <div className="question-footer">
+                <div className="save-ques">
+                    <img src={saveImg} alt="saveImg" />
+                    <p> 20 </p>
+                </div>
             </div>
         </div>
     </div>
