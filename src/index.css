@@ -62,6 +62,8 @@
 #num
 {
   padding: 0 30px;
+  display: flex;
+  align-items: center;
 }
 #plus
 {
@@ -80,6 +82,11 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
+}
+.author-desc img 
+{
+  height: 35px;
+  border-radius: 50%;
 }
 .author-desc div 
 {
