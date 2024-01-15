@@ -43,7 +43,7 @@ const Questions = () => {
                 <div className="compiler">
                     <p> File C:\Theses_Repo\train-cnn\environment\Scripts\activate.psl cannot be loaded because running scripts is disabled on this system. </p>
                 </div>
-                <p> After reading this I tried to run the visual studio code in administrator mode, thinking that the problem was a matter of privileges. But the error is throwing anyway. </p>
+                <p> After reading <a href="/"> this</a> I tried to run the visual studio code in administrator mode, thinking that the problem was a matter of privileges. But the error is throwing anyway. </p>
             </div>
             
 

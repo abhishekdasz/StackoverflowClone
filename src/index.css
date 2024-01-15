@@ -67,6 +67,7 @@
 #minus 
 {
   border-radius: 5px 0px 0px 5px;
+  cursor: pointer;
 }
 #num
 {
@@ -77,6 +78,7 @@
 #plus
 {
   border-radius: 0px 5px 5px 0px;
+  cursor: pointer;
 }
 
 .question-author-details
@@ -126,6 +128,10 @@
   padding: 1rem;
   background-color: #e6eaed;
 }
+.questions-description a
+{
+  color: #f38023;
+}
 
 
 
@@ -143,14 +149,19 @@
 .save-ques 
 {
   display: flex;
+  gap: 5px;
+  align-items: center;
+  color: #f38023;
+  font-weight: 600;
 }
 .save-ques img
 {
-  height: 25px;
+  height: 32px;
 }
 .share-comment 
 {
   display: flex;
+  gap: 1.5rem;
 }
 .share-comment img
 {
