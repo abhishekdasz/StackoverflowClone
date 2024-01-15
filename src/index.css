@@ -134,7 +134,25 @@
 
 
 
+.question-footer
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.save-ques 
+{
+  display: flex;
+}
 .save-ques img
 {
-  width: 25px;
+  height: 25px;
+}
+.share-comment 
+{
+  display: flex;
+}
+.share-comment img
+{
+  height: 25px;
 }

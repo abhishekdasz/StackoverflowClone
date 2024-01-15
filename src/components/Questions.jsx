@@ -1,6 +1,8 @@
 import React from 'react'
 import authorImg from '../assets/author.jpg'
 import saveImg from '../assets/save-tag.png'
+import shareImg from '../assets/share.png'
+import commentImg from '../assets/comment.png'
 
 const Questions = () => {
   return (
@@ -49,6 +51,10 @@ const Questions = () => {
                 <div className="save-ques">
                     <img src={saveImg} alt="saveImg" />
                     <p> 20 </p>
+                </div>
+                <div className="share-comment">
+                    <img src={shareImg} alt="shareImg" />
+                    <img src={commentImg} alt="commentImg" />
                 </div>
             </div>
         </div>
