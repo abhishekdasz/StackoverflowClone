@@ -10,7 +10,7 @@ const Questions = () => {
 
             <div className="questions-heading">
                 <div className="question-title">
-                    <h3> How to scroll (move screen up/down while cursor remains fixed at same screen position) in Vim </h3>
+                    <h3> Visual studio code cmd error: Cannot be loaded because running scripts is disabled on this system </h3>
                     <div className="numbers">
                         <div className="number">
                             <p id='minus'> - </p>

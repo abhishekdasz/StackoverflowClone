@@ -42,16 +42,14 @@
   padding: 2rem;
   display: flex;
   border-bottom: 1px solid #fff;
+  justify-content: space-between;
 }
 .question-title h3 
 {
   display: flex;
-  flex: 3;
+  width: 65%;
 }
-.question-title .numbers
-{
-  flex: 1;
-}
+
 .question-title .number
 {
   display: flex;
