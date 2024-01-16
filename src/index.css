@@ -179,6 +179,10 @@
 
 @media screen and (max-width: 768px) 
 {
+  .hero-section
+  {
+    padding: 1rem;
+  }
   .question-title
   {
     flex-direction: column;
