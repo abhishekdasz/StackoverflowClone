@@ -3,6 +3,8 @@ import authorImg from '../assets/author.jpg'
 import saveImg from '../assets/save-tag.png'
 import shareImg from '../assets/share.png'
 import commentImg from '../assets/comment.png'
+import { FaMinus} from "react-icons/fa6";
+import { FiPlus } from "react-icons/fi";
 
 const Questions = () => {
   return (
@@ -16,9 +18,9 @@ const Questions = () => {
                     <h3> Visual studio code cmd error: Cannot be loaded because running scripts is disabled on this system </h3>
                     <div className="numbers">
                         <div className="number">
-                            <p id='minus'> - </p>
+                            <p id='minus'> <FaMinus/> </p>
                             <p id='num'> 103 </p>
-                            <p id='plus'> + </p>
+                            <p id='plus'> <FiPlus/> </p>
                         </div>
                     </div>
                 </div>
