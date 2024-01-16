@@ -22,7 +22,7 @@ const Answers = () => {
                 </div>
                 <div className="btn">
                     <p id='minus'> - </p>
-                    <p id='num'> 103 </p>
+                    <p id='num'> 25 </p>
                     <p id='plus'> + </p>
                 </div>
             </div>
