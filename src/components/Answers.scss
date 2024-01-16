@@ -54,6 +54,17 @@
             .auth-det
             {
                 display: flex;
+                gap: 1rem;
+
+                div 
+                {
+                    display: flex;
+                }
+                #name 
+                {
+                    color: #f38023;
+                    font-weight: 600;
+                }
             }
 
             .btn
@@ -63,8 +74,10 @@
                 p 
                 {
                     border: 1px solid #fff;
-                    padding: 3px 15px;
+                    padding: 6px 15px;
                     background: #f38023;
+                    display: flex;
+                    align-items: center;
                 }
                 #minus 
                 {

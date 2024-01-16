@@ -1,5 +1,7 @@
 import React from 'react'
 import './Answers.scss'
+import { FaMinus} from "react-icons/fa6";
+import { FiPlus } from "react-icons/fi";
 
 const Answers = () => {
   return (
@@ -16,14 +18,16 @@ const Answers = () => {
 
             <div className="ans-author-details">
                 <div className="auth-det">
-                    <p> Author:  </p>
-                    <p> javed (308) </p>
+                    <div>
+                        <p> Author:  </p>
+                        <p id='name'> javed (308) </p>
+                    </div>
                     <p> Answered: Dec 9 '19 at 8:20 </p>
                 </div>
                 <div className="btn">
-                    <p id='minus'> - </p>
+                    <p id='minus'> <FaMinus/> </p>
                     <p id='num'> 25 </p>
-                    <p id='plus'> + </p>
+                    <p id='plus'> <FiPlus/> </p>
                 </div>
             </div>
         </div>
