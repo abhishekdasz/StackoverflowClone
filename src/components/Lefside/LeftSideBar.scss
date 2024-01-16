@@ -1,0 +1,19 @@
+.leftSidebar-section
+{
+    .leftSidebar-container
+    {
+        .left-navbar
+        {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            a 
+            {
+                display: flex;
+                gap: 1rem;
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}

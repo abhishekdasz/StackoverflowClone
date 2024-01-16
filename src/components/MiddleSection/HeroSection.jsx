@@ -1,14 +1,14 @@
 import React from 'react'
 import Questions from './Questions/Questions'
 import Answers from './Answers/Answers'
-import SideBar from '../Lefside/SideBar'
+import LeftSideBar from '../Lefside/LeftSideBar'
 import Rightside from '../Righside/Rightside'
 
 const HeroSection = () => {
   return (
     <div className='hero-section'>
       <div className="left-sidebar">
-        <SideBar/>
+        <LeftSideBar/>
       </div>
       <div className="quest-ans">
         <Questions/>
