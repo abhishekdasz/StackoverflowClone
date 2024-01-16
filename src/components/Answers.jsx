@@ -8,7 +8,7 @@ const Answers = () => {
             <div className="ans-nav">
                 <p> 20 Answers </p>
                 <div className="nav">
-                    <p> Votes </p>
+                    <div id='active'> <p> Votes </p> <span>  </span> </div>
                     <p> Oldest </p>
                     <p> Active </p>
                 </div>
