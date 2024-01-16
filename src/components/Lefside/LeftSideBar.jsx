@@ -14,6 +14,10 @@ const LeftSideBar = () => {
           <a href="/"> <AiOutlineTeam size={20} /> <p> Collectives </p> </a>
           <a href="/"> <HiOutlineBriefcase size={20} /> <p> Jobs </p> </a>
         </div>
+        <div className="leftSidebar-btns">
+          <p> Log in </p>
+          <p id='signup'> Sign up </p>
+        </div>
       </div>
     </div>
   )
