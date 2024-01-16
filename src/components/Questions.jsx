@@ -34,7 +34,11 @@ const Questions = () => {
                         </div>
                     </div>
                     <div className="question-asked-time">
-                        <pre> Asked 2years 1month ago | Active 21 days ago | Viewed 123k times </pre>
+                        <p> Asked 2years 1month ago </p>
+                        <span className='div-line'>  </span>
+                        <p> Active 21 days ago </p>
+                        <span className='div-line'>  </span>
+                        <p> Viewed 123k times </p>
                     </div>
                 </div>
             </div>
@@ -43,7 +47,8 @@ const Questions = () => {
             <div className="questions-description">
                 <p> Inside of visual studio code, I'm trying to execute a script.bat from the command line, but I'm getting the following error. </p>
                 <div className="compiler">
-                    <p> File C:\Theses_Repo\train-cnn\environment\Scripts\activate.psl cannot be loaded because running scripts is disabled on this system. </p>
+                    <div> <p> File C:\Theses_Repo\train-cnn\environment\Scripts\acti.psl cannot be loaded because running scripts is disabled on this system. </p> </div>
+                    
                 </div>
                 <p> After reading <a href="/"> this</a> I tried to run the visual studio code in administrator mode, thinking that the problem was a matter of privileges. But the error is throwing anyway. </p>
             </div>
