@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineHome, AiOutlineGlobal, AiOutlineTeam, AiOutlineDown, AiOutlineUp } from "react-icons/ai";
+import { AiOutlineHome, AiOutlineGlobal, AiOutlineTeam } from "react-icons/ai";
 import { HiOutlineBriefcase } from "react-icons/hi2";
 import './LeftSideBar.scss'
 
