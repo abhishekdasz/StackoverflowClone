@@ -1,0 +1,34 @@
+.answers-section
+{
+    width: 800px;
+    .answers-container
+    {
+        .ans-nav
+        {
+            display: flex;
+            justify-content: space-between;
+
+            .nav 
+            {
+                display: flex;
+            }
+        }
+
+        .ans-author-details
+        {
+            display: flex;
+            justify-content: space-between;
+            background-color: #e6eaed;
+            padding: 2rem;
+            .auth-det
+            {
+                display: flex;
+            }
+
+            .btn
+            {
+                display: flex;
+            }
+        }
+    }
+}
