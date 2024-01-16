@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from './components/NavBar'
-import HeroSection from './components/HeroSection'
+import HeroSection from './components/MiddleSection/HeroSection'
+
 
 const App = () => {
   return (

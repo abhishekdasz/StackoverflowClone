@@ -21,6 +21,7 @@
 .logo img{
     height: 3vw;
     max-height: 2rem;
+    margin-right: 4rem;
 }
 .search_wrapper{
     flex-grow: 1;
@@ -44,7 +45,7 @@
 .menu{
     display: flex;
     justify-content: space-around;
-    min-width: 24vw;
+    min-width: 22vw;
 }
 .menu a{
     text-decoration: none;

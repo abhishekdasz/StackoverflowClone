@@ -1,8 +1,8 @@
 import React from 'react'
-import authorImg from '../assets/author.jpg'
-import saveImg from '../assets/save-tag.png'
-import shareImg from '../assets/share.png'
-import commentImg from '../assets/comment.png'
+import authorImg from '../../../assets/author.jpg'
+import saveImg from '../../../assets/save-tag.png'
+import shareImg from '../../../assets/share.png'
+import commentImg from '../../../assets/comment.png'
 import { FaMinus} from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
 
