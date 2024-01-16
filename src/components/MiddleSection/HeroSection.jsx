@@ -10,14 +10,17 @@ const HeroSection = () => {
       <div className="left-sidebar">
         <LeftSideBar/>
       </div>
-      <div className="quest-ans">
-        <Questions/>
-        <br />
-        <Answers/>
+      <div className="quest-ans-rightSidebar">
+        <div className="quest-ans">
+          <Questions/>
+          <br />
+          <Answers/>
+        </div>
+        <div className="right-sidebar">
+          <Rightside/>
+        </div>
       </div>
-      <div className="right-sidebar">
-        <Rightside/>
-      </div>
+
     </div>
   )
 }

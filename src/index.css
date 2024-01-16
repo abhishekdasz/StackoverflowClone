@@ -8,17 +8,26 @@
 {
   background: #f7f7f7;
   display: flex;
-  gap: 3rem;
+  gap: 4.5rem;
 }
 
 .left-sidebar
 {
-  width: 17%;
-  padding: 4rem 0 4rem 4rem;
+  width: 19%;
+  padding: 4rem 0 1rem 4rem;
+  height: 89vh;
+  position: sticky;
+  top: 74px;
+  overflow-y: auto;
+}
+.quest-ans-rightSidebar
+{
+  display: flex;
+  gap: 2.4rem;
 }
 .right-sidebar
 {
-  width: 25%;
+  width: 30%;
 }
 
 
