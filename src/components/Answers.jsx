@@ -36,7 +36,7 @@ const Answers = () => {
 
             <div className="answer-desc">
                 <p> For more simplicity, I want to add the vs code settings path in addition to Ricardo's answer. you can get it like this: </p>
-                <p> File - Preferences - Settings and in the search bar write "automation". </p>
+                <p> File -{">"} Preferences -{">"} Settings and in the search bar write "automation". </p>
                 <p> After that, by looking your operating system enter "edit in settings.json". </p>
                 <p> Finally, add the following b/n the braces:  </p> 
             </div>
