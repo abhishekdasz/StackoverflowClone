@@ -1,72 +1,99 @@
-import React from 'react'
-import authorImg from '../../../assets/author.jpg'
-import saveImg from '../../../assets/save-tag.png'
-import shareImg from '../../../assets/share.png'
-import commentImg from '../../../assets/comment.png'
-import { FaMinus} from "react-icons/fa6";
-import { FiPlus } from "react-icons/fi";
+import React, { useEffect, useState } from 'react';
+import authorImg from '../../../assets/author.jpg';
+import saveImg from '../../../assets/save-tag.png';
+import shareImg from '../../../assets/share.png';
+import commentImg from '../../../assets/comment.png';
+import { FaMinus } from 'react-icons/fa6';
+import { FiPlus } from 'react-icons/fi';
+import parse from 'html-react-parser';
 
 const Questions = () => {
+  const [questionData, setQuestionData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          'https://api.stackexchange.com/2.3/posts?order=desc&sort=activity&site=stackoverflow&filter=!*Mg4Pjfe.L-lW1pv'
+        );
+        const data = await response.json();
+        // Assuming the API response is an array of questions
+        if (data.items && data.items.length > 0) {
+          setQuestionData(data.items[0]); // Use the first question for demonstration
+        }
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const [voteCount, setVoteCount] = useState(103);
+
+  useEffect(() => {
+    // Assuming 'questionData' has information about votes
+    if (questionData && questionData.score) {
+      setVoteCount(questionData.score);
+    }
+  }, [questionData]);
+
   return (
     <div className='questions-section'>
-        <div className="questions-container">
-
-
-
-            <div className="questions-heading">
-                <div className="question-title">
-                    <h3> Visual studio code cmd error: Cannot be loaded because running scripts is disabled on this system </h3>
-                    <div className="numbers">
-                        <div className="number">
-                            <p id='minus'> <FaMinus/> </p>
-                            <p id='num'> 103 </p>
-                            <p id='plus'> <FiPlus/> </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="question-author-details">
-                    <div className="author-desc">
-                        <img src={authorImg} alt="authorImg" />
-                        <p> Richardo Rocha </p>
-                        <div>
-                            <p> 9038 </p>
-                        </div>
-                    </div>
-                    <div className="question-asked-time">
-                        <p> Asked 2years 1month ago </p>
-                        <span className='div-line'>  </span>
-                        <p> Active 21 days ago </p>
-                        <span className='div-line'>  </span>
-                        <p> Viewed 123k times </p>
-                    </div>
-                </div>
+      <div className='questions-container'>
+        <div className='questions-heading'>
+          <div className='question-title'>
+            <h3>{questionData ? questionData.title : 'Loading...'}</h3>
+            <div className='numbers'>
+              <div className='number'>
+                <p id='minus'> <FaMinus /> </p>
+                <p id='num'> {voteCount} </p>
+                <p id='plus'> <FiPlus /> </p>
+              </div>
             </div>
+          </div>
 
-
-            <div className="questions-description">
-                <p> Inside of visual studio code, I'm trying to execute a script.bat from the command line, but I'm getting the following error. </p>
-                <div className="compiler">
-                    <div> <p> File C:\Theses_Repo\train-cnn\environment\Scripts\ activate.psl cannot be loaded because running scripts is disabled on this system. </p> </div>
-                    
+          {questionData && (
+            <div className='question-author-details'>
+              <div className='author-desc'>
+                <img src={authorImg} alt='authorImg' />
+                <p>{questionData.owner.display_name}</p>
+                <div>
+                  <p>{questionData.owner.reputation}</p>
                 </div>
-                <p> After reading <a href="/"> this</a> I tried to run the visual studio code in administrator mode, thinking that the problem was a matter of privileges. But the error is throwing anyway. </p>
+              </div>
+              <div className='question-asked-time'>
+                <p>Asked {new Date(questionData.creation_date * 1000).toLocaleDateString()}</p>
+                <span className='div-line'> </span>
+                <p>Active {new Date(questionData.last_activity_date * 1000).toLocaleDateString()}</p>
+                <span className='div-line'> </span>
+                <p>Viewed {questionData.view_count} times</p>
+              </div>
             </div>
-            
-
-            <div className="question-footer">
-                <div className="save-ques">
-                    <img src={saveImg} alt="saveImg" />
-                    <p> 20 </p>
-                </div>
-                <div className="share-comment">
-                    <img src={shareImg} alt="shareImg" />
-                    <img src={commentImg} alt="commentImg" />
-                </div>
-            </div>
+          )}
         </div>
-    </div>
-  )
-}
 
-export default Questions
+        {questionData && (
+          <div className='questions-description'>
+            <p> {parse(questionData.body)} </p>
+          </div>
+        )}
+
+        {questionData && (
+          <div className='question-footer'>
+            <div className='save-ques'>
+              <img src={saveImg} alt='saveImg' />
+              <p> {questionData.favorite_count || 0} </p>
+            </div>
+            <div className='share-comment'>
+              <img src={shareImg} alt='shareImg' />
+              <img src={commentImg} alt='commentImg' />
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Questions;
