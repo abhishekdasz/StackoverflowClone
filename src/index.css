@@ -142,11 +142,8 @@
 
 .questions-description
 {
-  display: flex;
-  flex-direction: column;
   padding: 1rem;
   font-size: 1.2rem;
-  justify-content: center;
 }
 .questions-description pre
 {
