@@ -39,7 +39,7 @@ const Questions = () => {
       setLoading(false);
     }
   };
-
+  
   const handleNextQuestion = () => {
     fetchQuestion();
   };
