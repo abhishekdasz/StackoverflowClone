@@ -1,48 +1,69 @@
-import React from 'react'
-import './Answers.scss'
-import { FaMinus} from "react-icons/fa6";
+import React, { useEffect, useState } from 'react';
+import './Answers.scss';
+import { FaMinus } from "react-icons/fa6";
 import { FiPlus } from "react-icons/fi";
+import parse from 'html-react-parser';
 
 const Answers = () => {
+  const [answerData, setAnswerData] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          'https://api.stackexchange.com/2.3/answers?order=desc&sort=activity&site=stackoverflow&filter=!nNPvSNdWme&key=mJ2X6EtLb*H*ub*7Qum0gg(('
+        );
+        const data = await response.json();
+
+        if (data.items && data.items.length > 0) {
+          setAnswerData(data.items[0]);
+        }
+      } catch (error) {
+        console.error('Error fetching answer data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className='answers-section'>
-        <div className="answers-container">
-
-
-            <div className="ans-nav">
-                <p> 20 Answers </p>
-                <div className="nav">
-                    <div id='active'> <p> Votes </p> <span>  </span> </div>
-                    <p> Oldest </p>
-                    <p> Active </p>
-                </div>
+      <div className="answers-container">
+        <div className="ans-nav">
+            <p> 20 Answers </p>
+            <div className="nav">
+                <div id='active'> <p> Votes </p> <span>  </span> </div>
+                <p> Oldest </p>
+                <p> Active </p>
             </div>
-
-            <div className="ans-author-details">
-                <div className="auth-det">
-                    <div>
-                        <p> Author:  </p>
-                        <p id='name'> javed (308) </p>
-                    </div>
-                    <p> Answered: Dec 9 '19 at 8:20 </p>
-                </div>
-                <div className="btn">
-                    <p id='minus'> <FaMinus/> </p>
-                    <p id='num'> 25 </p>
-                    <p id='plus'> <FiPlus/> </p>
-                </div>
+        </div>       
+        {answerData && (
+          <div className="ans-author-details">
+            <div className="auth-det">
+              <div>
+                <p> Author: </p>
+                <p id='name'>{answerData.owner.display_name} ({answerData.owner.reputation})</p>
+              </div>
+              <p> Answered: {new Date(answerData.creation_date * 1000).toLocaleString()}</p>
             </div>
-
-
-            <div className="answer-desc">
-                <p> For more simplicity, I want to add the vs code settings path in addition to Ricardo's answer. you can get it like this: </p>
-                <p> File -{">"} Preferences -{">"} Settings and in the search bar write "automation". </p>
-                <p> After that, by looking your operating system enter "edit in settings.json". </p>
-                <p> Finally, add the following b/n the braces:  </p> 
+            <div className="btn">
+              <p id='minus'> <FaMinus /> </p>
+              <p id='num'> {answerData.score} </p>
+              <p id='plus'> <FiPlus /> </p>
             </div>
-        </div>
+          </div>
+        )}
+
+        {answerData && (
+          <div className="answer-desc">
+            {answerData.body && (
+              <p>{parse(answerData.body)}</p>
+            )}
+          </div>
+        )}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Answers
+export default Answers;
