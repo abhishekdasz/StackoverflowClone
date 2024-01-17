@@ -8,7 +8,7 @@ const LinkedQues = () => {
         const fetchData = async () => {
           try {
             const response = await fetch(
-              'https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow'
+              'https://api.stackexchange.com/2.3/questions?order=desc&sort=activity&site=stackoverflow&key=mJ2X6EtLb*H*ub*7Qum0gg(('
             );
             const data = await response.json();
             setLinkedQuestions(data.items);

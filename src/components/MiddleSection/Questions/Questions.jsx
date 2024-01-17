@@ -23,7 +23,7 @@ const Questions = () => {
       setLoading(true);
 
       const response = await fetch(
-        'https://api.stackexchange.com/2.3/posts?order=desc&sort=activity&site=stackoverflow&filter=!*Mg4Pjfe.L-lW1pv'
+        'https://api.stackexchange.com/2.3/posts?order=desc&sort=activity&site=stackoverflow&filter=!*Mg4Pjfe.L-lW1pv&key=mJ2X6EtLb*H*ub*7Qum0gg(('
       );
       const data = await response.json();
 
