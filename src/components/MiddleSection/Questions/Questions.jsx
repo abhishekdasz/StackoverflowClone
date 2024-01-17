@@ -14,7 +14,7 @@ const Questions = () => {
 
   useEffect(() => {
     fetchQuestion();
-  }, []); // Fetch a question on component mount
+  }, []); 
 
   const fetchQuestion = async () => {
     if (loading) return;
